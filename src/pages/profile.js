@@ -19,23 +19,23 @@ const [showButton, setShowButton]= useState(false);
 const [likedPosts, setLikedPosts] = useState([]);
 
 useEffect(() => {
-  axios.get(`http://localhost:3001/auth/userinfo/${user}`).then((response) => {
+  axios.get(`https://book-review-posts.herokuapp.com/auth/userinfo/${user}`).then((response) => {
     setCurrentUser(response.data);
     });
-  axios.get(`http://localhost:3001/posts/${user}`,{ headers: {accessToken: localStorage.getItem("accessToken")}
+  axios.get(`https://book-review-posts.herokuapp.com/posts/${user}`,{ headers: {accessToken: localStorage.getItem("accessToken")}
     }).then((res)=>{
   setListOfPosts(res.data.postList)
   setLikedPosts(res.data.likedPosts.map((like)=>{
     return like.UserPostId
   }))
 });
-axios.get(`http://localhost:3001/auth/${user}`).then((response) => {
+axios.get(`https://book-review-posts.herokuapp.com/auth/${user}`).then((response) => {
   setNewAboutMe(response.data['aboutMe'])
 })
 }, [location.pathname]);
 
 const changeAboutMe = () => {
-  axios.put(`http://localhost:3001/auth/add-info/${user}`,  { "aboutMe": newAboutMe }, 
+  axios.put(`https://book-review-posts.herokuapp.com/auth/add-info/${user}`,  { "aboutMe": newAboutMe }, 
            { headers: { accessToken: localStorage.getItem("accessToken") },
           } ).then(() => {
              setShowButton(false);
@@ -52,7 +52,7 @@ const deletePost = (id) => {
     if (!id) {
       alert('please refresh the page and try again')
     } else {
-     axios.delete(`http://localhost:3001/posts/${id}`, { headers: {
+     axios.delete(`https://book-review-posts.herokuapp.com/posts/${id}`, { headers: {
       accessToken: localStorage.getItem("accessToken"),
      },
    } ).then(() => {

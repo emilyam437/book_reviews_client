@@ -18,7 +18,7 @@ function Login() {
 
   const login = () => {
     const data = { username: username, password: password };
-    axios.post("http://localhost:3001/auth/login", data).then((response) => {
+    axios.post("https://book-review-posts.herokuapp.com/auth/login", data).then((response) => {
       if (!response.data.error) {
         localStorage.setItem("accessToken", response.data.token);
         setAuthState2({username: response.data.username, id:response.data.id, status: true});
@@ -69,54 +69,3 @@ function Login() {
 }
 
 export default Login;
-
-
-// import React, {useEffect, useState} from 'react'
-// import {useParams, useNavigate} from 'react-router-dom';
-// import axios from 'axios';
-// import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
-
-
-
-// function Login() {
-
-//     const [user, setUser] = useState("");
-//     const [newPassword, setNewPassword] = useState("");
-
-//     let history = useNavigate();
-
-//     const loginAuth = () => {
-//        // alert('you clicked the login button')
-//         const data = { username: user,
-//                 password: newPassword }
-//              //   alert(`${data.username} is logging in`)
-//         axios.post(`http://localhost:3001/auth/login`, data).then((res)=>{
-//           if (res.data.error) {alert(res.data.error)}
-//           else {
-//             localStorage.setItem("accessToken", res.data)
-//           history('/')
-//           }
-//           })
-//       }
-//   return (
-//     <div>
-//         <p>Login</p> 
-//         <form className="addCommentContainer">
-//       <input type="text" placeholder="Username" className='inputSubmit' value={user} autoComplete="username"
-//             onChange={(event)=> {
-//               setUser(event.target.value)
-//             }}/>
-//           <input type="password" placeholder="Password" className='inputSubmit' value={newPassword} autoComplete="current-password"
-//             onChange={(event)=> {
-//               setNewPassword(event.target.value)
-//             }}/>
-//       <br/>
-//       <button className='submitButton2' onClick={loginAuth}>Submit</button>
-// </form>
-//         <h3>New User? Click below to create a new account</h3> 
-//         <Link to='/register'><button>Create Account</button></Link>
-//     </div>
-//   )
-// }
-
-// export default Login

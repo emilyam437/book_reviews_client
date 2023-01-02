@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react'
-import {useParams, useNavigate} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import {AuthContext} from '../helpers/AuthContext';
 import Navbar from './Navbar';
@@ -12,10 +12,9 @@ function EditPost() {
     const [updatedPost, setUpdatedPost] = useState("");
     const {authState} = useContext(AuthContext);
     let {id} = useParams();
-    let history = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
+        axios.get(`https://book-review-posts.herokuapp.com/posts/byId/${id}`).then((response) => {
           setPostObj(response.data);
           setUpdatedTitle(response.data.title);
           setUpdatedPost(response.data.postMessage);
@@ -38,7 +37,7 @@ function EditPost() {
         let answer = window.confirm('Save changes?');
         if (answer) {
 
-        axios.put("http://localhost:3001/posts/edit-title", 
+        axios.put("https://book-review-posts.herokuapp.com/posts/edit-title", 
          { newTitle: updatedTitle,
            id: id }, 
          { headers: { accessToken: localStorage.getItem("accessToken") },
@@ -47,7 +46,7 @@ function EditPost() {
          setShowButton(false)
         })
 
-        axios.put("http://localhost:3001/posts/edit-post", 
+        axios.put("https://book-review-posts.herokuapp.com/posts/edit-post", 
           { newPost: updatedPost,
             id: id }, 
           { headers: { accessToken: localStorage.getItem("accessToken") },

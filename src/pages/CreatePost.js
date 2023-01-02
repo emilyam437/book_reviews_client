@@ -19,7 +19,7 @@ function CreatePost() {
   }
 
   const onSubmit = (data) => {
-    axios.post("http://localhost:3001/posts",
+    axios.post("https://book-review-posts.herokuapp.com/posts",
     {
       title: data.title,
       postMessage: data.postMessage,

@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import {AuthContext} from '../helpers/AuthContext';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
@@ -17,7 +16,7 @@ function Navbar() {
       }
 
     useEffect(()=>{
-        axios.get('http://localhost:3001/auth/auth', { headers: {
+        axios.get('https://book-review-posts.herokuapp.com/auth/auth', { headers: {
           accessToken: localStorage.getItem('accessToken')
         }}).then((response)=>{
           if (response.data.error) {setAuthState({username: "", id:0, status: false})}

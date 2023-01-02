@@ -13,16 +13,16 @@ function Post() {
     let history = useNavigate();
 
     useEffect(() => {
-      axios.get(`http://localhost:3001/posts/byId/${id}`).then((response) => {
+      axios.get(`https://book-review-posts.herokuapp.com/posts/byId/${id}`).then((response) => {
         setPostObj(response.data);
       });
-      axios.get(`http://localhost:3001/comments/${id}`).then((response) => {
+      axios.get(`https://book-review-posts.herokuapp.com/comments/${id}`).then((response) => {
         setComment(response.data);
       });
     }, []);
 
     const addComment = () => {
-      axios.post('http://localhost:3001/comments',
+      axios.post('https://book-review-posts.herokuapp.com/comments',
       {
         commentBody: newComment,
         UserPostId: id
@@ -50,9 +50,9 @@ function Post() {
       let answer = window.confirm('delete comment?')
       if (answer) {
       if (!commentId) {
-        axios.get(`http://localhost:3001/comments/all-comments/1`).then((response) => {
+        axios.get(`https://book-review-posts.herokuapp.com/comments/all-comments/1`).then((response) => {
           let recentComment = response.data[response.data.length-1].id
-          axios.delete(`http://localhost:3001/comments/${recentComment}`, { headers: {
+          axios.delete(`https://book-review-posts.herokuapp.com/comments/${recentComment}`, { headers: {
             accessToken: localStorage.getItem("accessToken"),
           },
         } ).then(() => {
@@ -63,7 +63,7 @@ function Post() {
           });
         });
       } else {
-      axios.delete(`http://localhost:3001/comments/${commentId}`, { headers: {
+      axios.delete(`https://book-review-posts.herokuapp.com/comments/${commentId}`, { headers: {
         accessToken: localStorage.getItem("accessToken"),
       },
     } ).then(() => {

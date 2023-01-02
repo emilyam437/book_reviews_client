@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 import Post from './pages/Post';
@@ -19,7 +19,7 @@ function App() {
   const [authState, setAuthState] = useState({username: "", id:0, status: false});
 
   useEffect(()=>{
-    axios.get('http://localhost:3001/auth/auth', { headers: {
+    axios.get('https://book-review-posts.herokuapp.com/auth/auth', { headers: {
       accessToken: localStorage.getItem('accessToken')
     }}).then((response)=>{
       if (response.data.error) {setAuthState({username: "", id:0, status: false})}
@@ -43,7 +43,6 @@ function App() {
           <Route path='/login' element={<Login />} /> 
           <Route path='/register' element={<CreateAccount />}></Route>
           <Route path='/profile/:user' element={<Profile/>}></Route>
-          {/* <Route path='/profile/:user' element={<Profile/>}></Route> */}
           <Route path='/navbar' element={<Navbar/>}></Route>
           <Route path='/change-password' element={<ChangePassword/>}></Route>
           <Route path='/edit-post/:id' element={<EditPost/>}></Route>

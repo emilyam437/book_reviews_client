@@ -17,7 +17,7 @@ function ChangePassword() {
   const changePassword = () => {
     let answer = window.confirm('Save new password?')
     if (answer) {
-      axios.put(`http://localhost:3001/auth/changepassword/`,  { oldPassword: oldPassword, newPassword: newPassword}, 
+      axios.put(`https://book-review-posts.herokuapp.com/auth/changepassword/`,  { oldPassword: oldPassword, newPassword: newPassword}, 
                { headers: { accessToken: localStorage.getItem("accessToken")} } ).then((response) => {
                 if (response.data.error) {alert(response.data.error)}
                 else {

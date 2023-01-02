@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import {useEffect, useState, useContext} from 'react';
-import {useNavigate, useParams} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import {AuthContext} from '../helpers/AuthContext';
@@ -19,7 +19,7 @@ function Home() {
 
     const likePost = (postId) => {
 
-      axios.post('http://localhost:3001/like',
+      axios.post('https://book-review-posts.herokuapp.com/like',
       { UserPostId: postId },
       { headers: {
           accessToken: localStorage.getItem("accessToken"), },
@@ -40,7 +40,7 @@ function Home() {
           })
           if (likedPosts.includes(postId)) {
               setLikedPosts(likedPosts.filter((id) => {
-                return id != postId
+                return id !== postId
               }))
           } else {
             setLikedPosts([...likedPosts, postId])
@@ -48,7 +48,7 @@ function Home() {
     };
 
     useEffect(()=>{
-      axios.get("http://localhost:3001/posts",{ headers: {accessToken: localStorage.getItem("accessToken")}
+      axios.get("https://book-review-posts.herokuapp.com/posts",{ headers: {accessToken: localStorage.getItem("accessToken")}
       }).then((res)=>{
         setListOfPosts(res.data.listOfPosts)
         setLikedPosts(res.data.likedPosts.map((like)=>{
@@ -64,7 +64,7 @@ function Home() {
       if (!id) {
         alert('please refresh the page and try again')
       } else {
-       axios.delete(`http://localhost:3001/posts/${id}`, { headers: {
+       axios.delete(`https://book-review-posts.herokuapp.com/posts/${id}`, { headers: {
         accessToken: localStorage.getItem("accessToken"),
        },
      } ).then(() => {

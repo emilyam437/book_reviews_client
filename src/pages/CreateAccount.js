@@ -25,7 +25,7 @@ function CreateAccount() {
   }
 
   useEffect(()=>{
-    axios.get("http://localhost:3001/auth/all-users"
+    axios.get("https://book-review-posts.herokuapp.com/auth/all-users"
     ).then((res)=>{
       setListOfUsers(res.data);
       let newArr = []
@@ -37,18 +37,18 @@ function CreateAccount() {
   }, [])
 
   const onSubmit = (data) => {
-    axios.get("http://localhost:3001/auth/all-users"
+    axios.get("https://book-review-posts.herokuapp.com/auth/all-users"
     ).then((res)=>{
       setListOfUsers(res.data);
       let newArr = []
       listOfUsers.map((value, key)=>{
-        newArr.push(value.username);
+        newArr.push(value.username.toLowerCase());
       })
       setListOfNames(newArr);
-      if (newArr.includes(data.username)){
+      if (newArr.includes(data.username.toLowerCase())){
         alert('This username already exists. Try another.')
       } else {
-        axios.post("http://localhost:3001/auth", data).then((res)=>{
+        axios.post("https://book-review-posts.herokuapp.com/auth", data).then((res)=>{
           history('/login')
         })
       }
