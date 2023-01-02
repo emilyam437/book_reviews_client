@@ -1,0 +1,246 @@
+.App {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img {
+  margin-top: 30px;
+}
+
+.post {
+  width: 600px;
+  height: 200px;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border: 1px solid lightgray;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.post:hover {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+.post .title {
+  flex: 20%;
+  border-bottom: 1px solid lightgray;
+  background-color: rgb(153, 225, 168);;
+  display: grid;
+  place-content: center;
+  color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.post .body {
+  flex: 60%;
+  display: grid;
+  place-content: center;
+  border-radius: 25px;
+}
+
+.navBarCont {
+  margin-top:0px;
+  width: 100%;
+  background-color: rgb(153, 225, 168);
+  width: 100%;
+  /*padding-bottom: 5px;*/
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+}
+.post .footer {
+  flex: 20%;
+  border-top: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  background-color: rgb(153, 225, 168);;
+  color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.homeListItem {
+  display: block;
+  margin-right: 15px;
+}
+.navItem {
+  background-color: rgb(153, 225, 168);
+}
+
+.navItem:hover {
+  background-color: rgb(80, 188, 103);
+}
+.navItem:visited {
+  background-color: pink;
+}
+
+h1 {
+  text-align: center;
+}
+
+.inputCreatePost {
+  margin-right: 20px;
+}
+
+.submitButton {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  background-color: rgb(153, 225, 168);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+.submitButton:hover {
+  background-color: rgb(80, 188, 103);
+}
+
+.createPostPage {
+  display: flex;
+  align-items: center;
+}
+
+span {
+  color: red;
+  font-size: 10px;
+}
+
+.navList {
+  background-color: rgb(153, 225, 168);
+  width: 100%;
+  /*padding-bottom: 5px;*/
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+}
+
+.navName {
+  text-align: right;
+  margin-left: 950px;
+  display: inline;
+}
+
+.postPage {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.registerButtonCont {
+  text-align: center;
+}
+.leftSide {
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+}
+
+.rightSide {
+  flex: 50%;
+  height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftSide .title {
+  /* flex: 20%; */
+  border-bottom: 1px solid lightgray;
+  background-color: rgb(153, 225, 168);
+  display: grid;
+  place-content: center;
+  color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.leftSide .body {
+  flex: 60%;
+  display: grid;
+  place-content: center;
+  border-radius: 25px;
+}
+
+.leftSide .footer {
+  flex: 20%;
+  border-top: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  background-color: rgb(153, 225, 168);;
+  color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.comment {
+  flex: 60%;
+  display: grid;
+  place-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(153, 225, 168);
+  border-radius: 25px;
+  padding: 25px;
+}
+
+.listOfComments {
+  margin-top: 25px;
+  border-radius: 25px;
+  width: 70%
+} 
+
+.inputSubmit {
+  margin-bottom: 15px;
+}
+
+.submitButton2 {
+  text-align: center; 
+  background-color: rgb(153, 225, 168);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+  border-radius: 25px;
+  margin-left: 50px;
+}
+.submitButton2:hover {
+  background-color: rgb(80, 188, 103);
+}
+.likes {
+  display: flex;
+  flex-direction: row;
+}
+
+.footerListCont, .footerItem {
+display: flex;
+}
+
+.footerItem {
+  margin-left: 15px;
+}
+
+.likeButton:hover {
+  color: gray;
+}
+.likeButton {
+  right: 550px;
+  position: absolute;
+}
+
+.likeCount {
+  right: 500px;
+  position: absolute;
+}
+
+.clickUser:hover {
+  color: gray;
+}

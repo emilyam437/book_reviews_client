@@ -1,38 +1,528 @@
-.App {
-  text-align: center;
-}
+* {
+    margin: 0;
+    padding: 0;
+ }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+ button {
+   padding: 3px;
+ }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+ button:hover {
+   cursor: pointer;
+ }
+
+ /* Nav Bar */
+
+ .navBarCont {
+    background-color: #ff5050;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    text-align: center;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    height: 25px;
+ }
+
+ .navItem {
+    color: white;
+    text-decoration: none;
+    margin: 0px 10px;
+    float: left;
+    padding: 2px;
+ }
+
+ .navItem:hover {
+    color: #a6a6a6;
+    cursor: pointer;
+ }
+
+ .navName {
+    text-align: right;
+    margin-right: 15px;
+    font-weight: 700;
+    color: white;
+ } 
+
+ .navName:hover {
+   color: #a6a6a6;
+   cursor: pointer;
+ }
+ @media
+ (prefers-reduced-motion: no-preference) {
+   html {
+     scroll-behavior: smooth;
+   }
+ }
+
+ /* Home Page */
+
+ .homePageCont {
+    text-align: center;
+ }
+
+ .homePageCont h1 {
+    position: sticky;
+    top: 50px;
+    margin-bottom: 15px;
+ }
+
+ .postCont {
+    width: 50%;
+    margin: auto;
+    height: 300px; 
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    border: 1px solid lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: relative;
+    background-color: #f2f2f2;
+ }
+
+ .postCont:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
+
+ .postCont .title {
+    font-weight: 700;
+    background-color: #ff5050;
+    border-radius: 20px 20px 0px 0px;
+    color: white;
+    padding-bottom: 15px;
+    padding-top: 15px;
+ }
+
+ .postCont .title:hover {
+    color: #a6a6a6;
+    cursor: pointer;
+ }
+
+ .postCont .body {
+    margin: auto;
+    background-color: #f2f2f2;
+ }
+
+ .footerCont {
+    background-color: #ff5050;
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0px 0px 20px 20px;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    align-items: center;
+ }
+ .footerCont2 {
+   display: flex;
+   position: absolute;
+   flex-direction: row;
+   bottom: 0;
+   width: 100%;
+   border-radius: 0px 0px 20px 20px;
+   color: white;
+   padding-top: 15px;
+   padding-bottom: 10px;
+   align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+ .footerItem {
+    padding-left: 10px;
+    align-items: center;
+ }
+ .footerClick:hover {
+    color: #a6a6a6;
+    cursor: pointer;
+ }
 
-.App-link {
-  color: #61dafb;
-}
+ .footerLikes1 {
+    padding-left: 85%;
+ }
+ /* Profile Page */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ .pageTitle {
+    text-align: center;
+    margin-top: 20px;
+ }
+
+ .profilePageCont {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+    text-align: center;
+ }
+
+ .leftCol {
+    width: 80%;
+    height: auto; 
+    /* border-radius: 20px; */
+    margin: auto;
+    margin-top: 30px;
+    /* border: 1px solid lightgray; */
+    font-family: Arial, Helvetica, sans-serif;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    position: relative;
+    /* background-color: #f2f2f2; */
+ }
+
+ .aboutMeEdit:hover {
+   background-color: lightgrey;
+   cursor: pointer;
+ }
+ .leftColBox:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .leftColBox {
+   width: 80%;
+   height: auto; 
+   border-radius: 20px;
+   margin: auto;
+   border: 1px solid lightgray;
+   font-family: Arial, Helvetica, sans-serif;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   position: relative;
+   background-color: #f2f2f2;
   }
+
+ .leftCol .title {
+    font-weight: 700;
+    background-color: #ff5050;
+    border-radius: 20px 20px 0px 0px;
+    color: white;
+    padding-bottom: 15px;
+    padding-top: 15px;
+ }
+
+ .leftCol .body {
+    background-color: #f2f2f2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+ }
+
+ .editable {
+   text-align: left;
+   margin-left: 10px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+
+ .leftCol button {
+   margin-top: 10px;
+ }
+
+ .registerButtonCont {
+   background-color: white;
+ }
+
+ .rightCol {
+    width: 80%;
+    height: auto; 
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 30px;
+    border: 1px solid lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: relative;
+    background-color: #f2f2f2;
+ }
+
+ .rightCol .title {
+    font-weight: 700;
+    background-color: #ff5050;
+    border-radius: 20px 20px 0px 0px;
+    color: white;
+    padding-bottom: 15px;
+    padding-top: 15px;
+ }
+
+ .rightCol .body1 {
+   padding-top: 20px;
+   margin-left: 7px;
+   text-align: left;
+ }
+
+ .rightCol:hover {
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+ }
+
+ .rightCol .body2 {
+   text-align: left;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-bottom: 15px;
+   font-weight: 700px;
+ }
+
+ .myProfileButtonCont {
+   text-align: start;
+   margin-left: 15px;
+   margin-bottom: 15px;
+   border-bottom: 3px solid #ff5050;
+ }
+
+ .myProfileButtonCont button {
+   margin-bottom: 15px;
+ }
+
+ .likeFooterCont {
+   vertical-align: middle;
+   display: inline;
+ }
+ .inline-icon {
+   vertical-align: bottom;
+   font-size: 18px !important;
 }
+
+ /* .body2:hover {
+   color: #595959;
+   cursor: pointer;
+  }
+
+ .body1:hover {
+   color: #595959;
+   cursor: pointer;
+  } */
+
+  .deleteButton1 {
+   margin-right: 15px;
+  }
+ /* Post Page */
+
+ .postPage {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+  }
+
+  .leftSide {
+   width: 80%;
+   height: auto; 
+   border-radius: 20px;
+   margin: auto;
+   margin-top: 30px;
+   border: 1px solid lightgray;
+   font-family: Arial, Helvetica, sans-serif;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   position: relative;
+   background-color: #f2f2f2;
+  }
+
+  .leftSide .title {
+   font-weight: 700;
+   background-color: #ff5050;
+   border-radius: 20px 20px 0px 0px;
+   color: white;
+   padding-bottom: 15px;
+   padding-top: 15px;
+   text-align: center;
+}
+.leftSide .body {
+   padding-top: 20px;
+   margin-left: 7px;
+   text-align: left;
+   padding-bottom: 10px;
+ }
+
+ .leftSide .footer {
+   background-color: #ff5050;
+   border-radius: 0px 0px 20px 20px;
+   text-align: right;
+   padding: 8px;
+   color: white;
+ }
+
+ .leftSide .footer:hover {
+   color: #595959;
+   cursor: pointer;
+ }
+
+  .rightSide {
+   width: 80%;
+   height: auto; 
+   margin: auto;
+   margin-top: 30px;
+   font-family: Arial, Helvetica, sans-serif;
+   position: relative;
+  }
+
+  .rightSide h3 {
+   text-align: center;
+   margin-bottom: 2%;
+  }
+
+  .addCommentContainer {
+   margin-left: 3%;
+   margin-bottom: 2%;
+  }
+
+  .submitButton2 {
+   margin-left: 2%;
+  }
+
+  .inputSubmit {
+   padding: 3px;
+  }
+
+  .listOfComments {
+   width: 99.5%;
+   height: auto; 
+   border-radius: 20px;
+   margin: auto;
+   margin-top: 30px;
+   border: 1px solid lightgray;
+   font-family: Arial, Helvetica, sans-serif;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   position: relative;
+   background-color: #f2f2f2;
+  }
+
+.listOfComments .comment{
+padding: 10px;
+padding-left: 3%;
+color: #ff5050;
+font-weight: 700;
+}
+
+.listOfComments .user {
+padding-left: 80%;
+color: #595959;
+}
+
+.listOfComments .user:hover{
+color: white;
+cursor: pointer;
+}
+
+.xButton {
+   padding:0px;
+}
+.xButton:hover {
+   color: #595959;
+   cursor: pointer;
+}
+
+.leftSide .body2 {
+   margin-left: 90%;
+   margin-bottom: 3%;
+}
+
+  /* Create Post Page */
+
+.createPostPage {
+   margin-top: 0;
+   text-align: center;
+  }
+
+  .createPostPage span {
+   color: red;
+   font-size: x-small;
+  }
+
+  .inputCreatePost {
+   margin-bottom: 1%;
+  }
+
+  .createPostPage .label1 {
+   padding-top: 10px;
+  }
+
+  /* Edit Post */
+
+  .titleEditCont {
+   background-color: #ff5050;
+   border-radius: 20px 20px 0px 0px;
+   color: white;
+   padding-bottom: 5px;
+   padding-top: 5px;
+   margin-top: 10px;
+   margin-left: 30px;
+   text-align: center;
+   width: 300px;
+   margin-bottom: 0px;
+}
+
+.titleEdit:hover{
+   color:rgba(99, 99, 99, 0.9);
+   cursor: pointer;
+   background-color: lightgray;
+}
+.postEditCont {
+   color: black;
+   padding-top: 20px;
+   margin-left: 30px;
+   text-align: left;
+   padding-bottom: 10px;
+   background-color: white;
+   border-radius: 0px 0px 20px 20px;
+   text-align: left;
+   padding-bottom: 8px;
+   border-bottom: 1px solid black;
+   border-left: 1px solid black;
+   border-right: 1px solid black;
+   width: 300px;
+ }
+
+ .bodyEdit:hover{
+   color: rgba(99, 99, 99, 0.9);
+   cursor: pointer;
+   background-color: lightgray;
+ }
+
+ .savePostChanges {
+   margin-left: 130px;
+   margin-top: 15px;
+ }
+  /* Login Page */
+
+  .notLoggedIn {
+   margin-top: 15px;
+   text-align: center;
+  }
+  .loginContainer {
+   margin-top: 30px;
+   text-align: center;
+  }
+
+  .loginContainer button {
+   margin-left: 10px;
+  }
+
+  .registerButtonCont {
+   margin-top: 20px;
+   text-align: center;
+  }
+
+  .registerButtonCont button {
+   margin-top: 15px;
+  }
+
+  .eyeCont {
+   vertical-align: bottom;
+  }
+
+  .eye {
+   color: black;
+  }
+
+  /* Create Account Page */
+
+  .loginClick:hover {
+   color: gray;
+   cursor: pointer;
+  }
+
+  .loginClick {
+   color:#ff5050;
+  }
+
+  .eyeCont2 {
+   vertical-align: top;
+  }
