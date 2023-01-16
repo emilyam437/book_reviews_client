@@ -8,6 +8,7 @@ function Post() {
     const [postObj, setPostObj] = useState({});
     const [comment, setComment] = useState([]);
     const [newComment, setNewComment] = useState("");
+    const [oneCommentLimit, setOneCommentLimit] = useState(true);
     const {authState} = useContext(AuthContext);
     let {id} = useParams();
     let history = useNavigate();
@@ -42,6 +43,7 @@ function Post() {
             newArr.unshift(commentToAdd);
             setComment(newArr);
             setNewComment("");
+            setOneCommentLimit(false);
           }
         });
     };
@@ -60,6 +62,7 @@ function Post() {
           newArr.splice(key, 1);
           setComment(newArr);
           setNewComment("");
+          setOneCommentLimit(true);
           });
         });
       } else {
@@ -89,7 +92,8 @@ function Post() {
 
   <div className='rightSide'>
   <h3>Comments!</h3>
-    <div className="addCommentContainer">
+{oneCommentLimit &&  (
+<div className="addCommentContainer">
       <input type="text" placeholder="Add comment" className='inputSubmit' value={newComment}
             onChange={(event)=> {
               setNewComment(event.target.value)
@@ -97,6 +101,7 @@ function Post() {
      
       <button className='submitButton2' onClick={addComment}>Submit</button>
 </div>
+)}
 <div className='listOfComments'>
 {comment.map((value, key) => {
  return <div  key={key}>
